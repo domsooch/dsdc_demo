@@ -1,0 +1,4 @@
+[submodule "clusterone_template"]
+	path = clusterone_template
+	url = https://github.com/theclusterone/clusterone-template
+	branch = master
