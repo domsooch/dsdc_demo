@@ -22,4 +22,3 @@ terminaltables==3.1.0
 uritemplate==3.0.0
 urllib3==1.22
 virtualenv==15.2.0
-Keras==2.0.9
