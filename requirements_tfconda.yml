@@ -120,8 +120,6 @@ dependencies:
   - sip=4.18=py35_1
   - six=1.11.0=py35_1
   - sqlite=3.24.0=h2f33b56_0
-  - tensorboard=1.5.1=py35_1
-  - tensorflow=1.5.0=py35_0
   - termcolor=1.1.0=py_2
   - terminado=0.8.1=py35_0
   - testpath=0.3.1=py35_0
@@ -176,5 +174,5 @@ dependencies:
   - pdbfixer=1.4=py35_0
   - boost=1.63.0=py35h04a78bc_1
   - rdkit=2017.09.1=py35_1
-prefix: /home/ubuntu/anaconda3/envs/tensorflow
+
 

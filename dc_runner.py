@@ -89,39 +89,6 @@ FLAGS = flags.FLAGS
 print(FLAGS.data_dir)
 print(FLAGS.log_dir)
 
-def main(unused_argv):
-    # Load Tox21 dataset
-    n_features = 1024
-    tox21_tasks, tox21_datasets, transformers = dc.molnet.load_tox21()
-    train_dataset, valid_dataset, test_dataset = tox21_datasets
-    
-    # Fit models
-    metric = dc.metrics.Metric(dc.metrics.roc_auc_score, np.mean)
-    
-    model = dc.models.RobustMultitaskClassifier(
-        len(tox21_tasks),
-        n_features,
-        layer_sizes=[1000],
-        dropouts=[.25],
-        learning_rate=0.001,
-        batch_size=50,
-        use_queue=False)
-    
-    # Fit trained model
-    model.fit(train_dataset, nb_epoch=1)
-    model.save()
-    
-    print("Evaluating model")
-    train_scores = model.evaluate(train_dataset, [metric], transformers)
-    valid_scores = model.evaluate(valid_dataset, [metric], transformers)
-    
-    print("Train scores")
-    print(train_scores)
-    
-    print("Validation scores")
-    print(valid_scores)
-
-
 
 def device_and_target():
   # If FLAGS.job_name is not set, we're running single-machine TensorFlow.
@@ -159,7 +126,7 @@ def device_and_target():
   )
 
 
-def main_mnist(unused_argv):
+def main_mnist(unused_argv):#If you want this to run rename it 'main'
   if FLAGS.log_dir is None or FLAGS.log_dir == "":
     raise ValueError("Must specify an explicit `log_dir`")
   if FLAGS.data_dir is None or FLAGS.data_dir == "":
@@ -189,7 +156,39 @@ def main_mnist(unused_argv):
       xs, ys = data.train.next_batch(FLAGS.batch_size, fake_data=False)
       sess.run(train_op, feed_dict={images:xs, labels:ys})
 
-
+def main(unused_argv):
+    # Load Tox21 dataset
+    n_features = 1024
+    tox21_tasks, tox21_datasets, transformers = dc.molnet.load_tox21()
+    train_dataset, valid_dataset, test_dataset = tox21_datasets
+    
+    # Fit models
+    metric = dc.metrics.Metric(dc.metrics.roc_auc_score, np.mean)
+    
+    model = dc.models.RobustMultitaskClassifier(
+        len(tox21_tasks),
+        n_features,
+        layer_sizes=[1000],
+        dropouts=[.25],
+        learning_rate=0.001,
+        batch_size=50,
+        use_queue=False)
+    
+    # Fit trained model
+    model.fit(train_dataset, nb_epoch=1)
+    model.save()
+    
+    print("Evaluating model")
+    train_scores = model.evaluate(train_dataset, [metric], transformers)
+    valid_scores = model.evaluate(valid_dataset, [metric], transformers)
+    
+    print("Train scores")
+    print(train_scores)
+    
+    print("Validation scores")
+    print(valid_scores)
+    
+    
 if __name__ == "__main__":
   tf.app.run()#Runs the program with an optional 'main' function and 'argv' list.
   
