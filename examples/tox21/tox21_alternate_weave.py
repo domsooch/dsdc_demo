@@ -4,7 +4,11 @@ Script that trains Weave models on Tox21 dataset.
 from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
+import sys, os
 
+print(os.getcwd())
+
+sys.path.append('../../')
 import numpy as np
 np.random.seed(123)
 import tensorflow as tf
