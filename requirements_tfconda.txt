@@ -96,6 +96,7 @@ olefile=0.45.1=py_1
 openmm=7.2.2=py35_1
 openssl=1.0.2o=h470a237_1
 pandas=0.22.0=py35_1
+pandas=0.22.0=py35_0
 pandoc=2.2.2=1
 pandocfilters=1.4.2=py_1
 parso=0.3.1=py_0
@@ -140,8 +141,8 @@ simplegeneric=0.8.1=py_1
 sip=4.18=py35_1
 six=1.11.0=py35_1
 sqlite=3.24.0=h2f33b56_0
-tensorboard=1.5.1=py35_1
-tensorflow=1.5.0=py35_0
+#tensorboard=1.5.1=py35_1
+#tensorflow=1.5.0=py35_0
 termcolor=1.1.0=py_2
 terminado=0.8.1=py35_0
 testpath=0.3.1=py35_0
