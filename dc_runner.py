@@ -3,6 +3,8 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
+
+print("TestPrint to log: inside dc_runner.py")
 import math
 import os
 
