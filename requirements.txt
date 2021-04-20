@@ -13,7 +13,7 @@ idna==2.6
 itypes==1.1.0
 Jinja2==2.10
 MarkupSafe==1.0
-py==1.5.3
+py==1.10.0
 raven==6.6.0
 requests==2.18.4
 six==1.11.0
